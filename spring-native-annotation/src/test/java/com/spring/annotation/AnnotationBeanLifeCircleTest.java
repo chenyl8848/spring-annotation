@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @date 2022-08-16 10:23
  * @description 注解方式配置 bean 的生命周期
  */
-public class AnnotationBeanLifeCircleTest01 {
+public class AnnotationBeanLifeCircleTest {
 
     /**
      * 当 bean 的作用域为 singleton 时，bean 在 ioc 容器时创建就初始化，在 ioc 容器关闭时销毁 bean
