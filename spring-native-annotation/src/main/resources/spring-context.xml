@@ -9,18 +9,25 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
+    <context:property-placeholder location="classpath:person.properties"></context:property-placeholder>
     <!-- 通过 xml 文件向 ioc 容器注入一个 bean -->
+    <!--    <bean id="person" class="com.spring.annotation.bean.Person">-->
+    <!--        <property name="name" value="张三"></property>-->
+    <!--        <property name="sex" value="男"></property>-->
+    <!--        <property name="age" value="18"></property>-->
+    <!--    </bean>-->
+
     <bean id="person" class="com.spring.annotation.bean.Person">
-        <property name="name" value="张三"></property>
-        <property name="sex" value="男"></property>
-        <property name="age" value="18"></property>
+        <property name="name" value="${person.name}"></property>
+        <property name="sex" value="${person.sex}"></property>
+        <property name="age" value="${person.age}"></property>
     </bean>
 
     <!-- init-method:指定初始化方法；destroy-method:指定销毁方法 -->
-<!--    <bean id="cat" class="com.spring.annotation.bean.Cat" init-method="init" destroy-method="destroy" scope="singleton"></bean>-->
-<!--    <bean id="cat" class="com.spring.annotation.bean.Cat" init-method="init" destroy-method="destroy" scope="prototype"></bean>-->
+    <!--    <bean id="cat" class="com.spring.annotation.bean.Cat" init-method="init" destroy-method="destroy" scope="singleton"></bean>-->
+    <!--    <bean id="cat" class="com.spring.annotation.bean.Cat" init-method="init" destroy-method="destroy" scope="prototype"></bean>-->
 
     <!-- 开启包扫描 -->
-<!--    <context:component-scan base-package="com.spring.annotation"></context:component-scan>-->
+    <!--    <context:component-scan base-package="com.spring.annotation"></context:component-scan>-->
 
 </beans>

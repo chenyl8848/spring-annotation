@@ -1,5 +1,7 @@
 package com.spring.annotation.bean;
 
+import org.springframework.beans.factory.annotation.Value;
+
 /**
  * @author cyl
  * @date 2022-08-11 10:26
@@ -7,10 +9,14 @@ package com.spring.annotation.bean;
  */
 public class Person {
 
+    @Value("张三")
     private String name;
 
+    @Value("${person.sex}")
     private String sex;
 
+    // 支持 SPEL
+    @Value("#{100-88}")
     private Integer age;
 
     public Person() {
