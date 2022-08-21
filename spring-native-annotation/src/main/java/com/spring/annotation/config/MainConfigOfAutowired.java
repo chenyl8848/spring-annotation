@@ -1,6 +1,10 @@
 package com.spring.annotation.config;
 
+import com.spring.annotation.bean.Boss;
+import com.spring.annotation.bean.Car;
+import com.spring.annotation.bean.Cat;
 import com.spring.annotation.dao.PersonDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,8 +16,9 @@ import org.springframework.context.annotation.Primary;
  * @description 配置类
  */
 @Configuration
-@ComponentScan(value = {"com.spring.annotation.controller", "com.spring.annotation.service", "com.spring.annotation.dao"})
-public class MainConfig06 {
+@ComponentScan(value = {"com.spring.annotation.controller", "com.spring.annotation.service",
+        "com.spring.annotation.dao", "com.spring.annotation.bean"})
+public class MainConfigOfAutowired {
 
     /**
      * 自动装配：
@@ -32,7 +37,14 @@ public class MainConfig06 {
      *  5.@Inject注解：
      *      1.需要导入 javax.inject 包，和 @Autowired 注解功能一样，不能支持 required = false
      *      2.属于 JSR330 规范
-     *
+     *  6.@Autowired 注解可以标注在属性、方法、构造器、参数上，都是从容器中获取参数组件的值
+     *      1.标注在 setter 方法上
+     *      2.标注在构造器上：如果组件只有一个有参构造器，这个有参构造器的 @Autowired 可以省略，参数位置的组件还是可以自动从容器中获取
+     *      3.标注在参数上
+     *  7.自定义组件想要使用 Spring 底层的一些组件 （ApplicationContext、BeanFactory、XXX）
+     *      1.只要自定义组件实现 XXXAware，在创建对象的时候，会调用接口规定的方法注入相关组件
+     *      2.XXXAware:把 Spring 底层一些组件注入到自定义的 bean 中
+     *      3.XXXAware使用原理：通过使用 XXXAwareProcessor 例如：ApplicationContextAware==》ApplicationContextAwareProcessor
      *
      */
 
@@ -42,5 +54,15 @@ public class MainConfig06 {
         PersonDao personDao = new PersonDao();
         personDao.setLabel("2");
         return personDao;
+    }
+
+    @Bean
+    public Car car() {
+        return new Car();
+    }
+
+    @Bean
+    public Boss boss(@Autowired Car car, Cat cat) {
+        return new Boss(car, cat);
     }
 }

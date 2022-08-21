@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 // 满足当前条件，这个类中的配置的所有 bean 注册才能生效
 //@Conditional(value = {WindowsCondition.class})
-public class MainConfig02 {
+public class MainConfigOfConditional {
 
     @Conditional(value = WindowsCondition.class)
     @Bean("Bill")

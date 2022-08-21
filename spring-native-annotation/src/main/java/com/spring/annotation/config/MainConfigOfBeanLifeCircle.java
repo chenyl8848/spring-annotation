@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Scope;
  */
 @Configuration
 @ComponentScan(value = {"com.spring.annotation.bean", "com.spring.annotation.custom"})
-public class MainConfig04 {
+public class MainConfigOfBeanLifeCircle {
 
     /**
      * bean 的生命周期：

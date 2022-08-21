@@ -1,6 +1,6 @@
 package com.spring.annotation;
 
-import com.spring.annotation.config.MainConfig03;
+import com.spring.annotation.config.MainConfigOfImport;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class AnnotationBeanRegisterTest03 {
 
-    private ApplicationContext context = new AnnotationConfigApplicationContext(MainConfig03.class);
+    private ApplicationContext context = new AnnotationConfigApplicationContext(MainConfigOfImport.class);
 
     @Test
     public void testAnnotationImport() {

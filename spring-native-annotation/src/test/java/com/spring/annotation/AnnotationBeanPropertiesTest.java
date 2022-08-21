@@ -1,7 +1,7 @@
 package com.spring.annotation;
 
 import com.spring.annotation.bean.Person;
-import com.spring.annotation.config.MainConfig05;
+import com.spring.annotation.config.MainConfigOfPropertySource;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -14,7 +14,7 @@ public class AnnotationBeanPropertiesTest {
 
     @Test
     public void testAnnotationValue() {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig05.class);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfPropertySource.class);
         Person person = (Person) applicationContext.getBean("person");
 
         System.out.println(person);
@@ -24,7 +24,7 @@ public class AnnotationBeanPropertiesTest {
 
     @Test
     public void testAnnotationPropertySource() {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig05.class);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfPropertySource.class);
         Person person = (Person) applicationContext.getBean("person");
 
         System.out.println(person);

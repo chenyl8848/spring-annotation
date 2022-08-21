@@ -82,7 +82,7 @@ import org.springframework.stereotype.Controller;
 )
 // 指定多个@ComponentScan
 @ComponentScans(value = {@ComponentScan(), @ComponentScan()})
-public class MainConfig01 {
+public class MainConfigOfBean {
 
     /**
      * @Bean 向 ioc 容器注册 bean

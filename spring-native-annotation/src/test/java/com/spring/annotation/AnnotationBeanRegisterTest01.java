@@ -1,7 +1,7 @@
 package com.spring.annotation;
 
 import com.spring.annotation.bean.Person;
-import com.spring.annotation.config.MainConfig01;
+import com.spring.annotation.config.MainConfigOfBean;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,7 +14,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class AnnotationBeanRegisterTest01 {
 
     // 通过注解创建 spring 上下文
-    ApplicationContext context = new AnnotationConfigApplicationContext(MainConfig01.class);
+    ApplicationContext context = new AnnotationConfigApplicationContext(MainConfigOfBean.class);
 
     @Test
     public void testAnnotationRegisterBean() {

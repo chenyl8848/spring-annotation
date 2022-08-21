@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Import;
 @Configuration
 // 导入组件，id 默认是全类名
 @Import(value = {Red.class, Black.class, White.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
-public class MainConfig03 {
+public class MainConfigOfImport {
 
     @Bean
     public ColorFactoryBean colorFactoryBean() {

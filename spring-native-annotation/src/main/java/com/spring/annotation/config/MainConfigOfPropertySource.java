@@ -15,7 +15,7 @@ import org.springframework.context.annotation.PropertySources;
 // 绑定要加载的配置文件
 //@PropertySource(value = {"classpath:person.properties"})
 @PropertySources(value = {@PropertySource(value = {"classpath:person.properties"})})
-public class MainConfig05 {
+public class MainConfigOfPropertySource {
 
     @Bean
     public Person person() {

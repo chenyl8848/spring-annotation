@@ -1,6 +1,6 @@
 package com.spring.annotation;
 
-import com.spring.annotation.config.MainConfig04;
+import com.spring.annotation.config.MainConfigOfBeanLifeCircle;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -17,7 +17,7 @@ public class AnnotationBeanLifeCircleTest {
      */
     @Test
     public void testAnnotationBeanLfeCircle() {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig04.class);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfBeanLifeCircle.class);
 
         Object cat = applicationContext.getBean("cat");
 
