@@ -21,6 +21,14 @@
             <version>5.3.20</version>
         </dependency>
 
+        <!-- 引入 spring aop 环境依赖包 -->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>5.3.20</version>
+        </dependency>
+
         <!-- 引入 junit 单元测试类 -->
         <dependency>
             <groupId>junit</groupId>
