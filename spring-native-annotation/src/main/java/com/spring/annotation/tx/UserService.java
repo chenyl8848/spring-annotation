@@ -18,6 +18,7 @@ public class UserService {
     // 开启事务
     @Transactional(rollbackFor = Exception.class)
     public void insertUser() {
+        System.out.println("新增用户信息....");
         userDao.insertUser();
         int i = 10 / 0;
     }
